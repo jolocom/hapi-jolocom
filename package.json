@@ -33,11 +33,9 @@
     "ws": "^7.3.0"
   },
   "peerDependencies": {
-    "@hapi/cookie": "^11.0.1",
     "@hapi/hapi": "^18.1.0",
     "@jolocom/sdk": "^0.14.1",
-    "hapi-plugin-websocket": "^2.3.0",
-    "typeorm": "^0.2.24"
+    "hapi-plugin-websocket": "^2.3.0"
   },
   "keywords": [
     "hapi",
