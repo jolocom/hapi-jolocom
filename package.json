@@ -1,6 +1,6 @@
 {
   "name": "hapi-jolocom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HAPI plugin to provide HTTP and WS transports for JolocomSDK",
   "author": "Jolocom Dev <dev@jolocom.io>",
   "license": "MIT",
