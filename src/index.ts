@@ -1,6 +1,6 @@
 // @ts-ignore something is broken with @types/hapi__hapi
 import { Plugin, Server, Request, ResponseToolkit } from "@hapi/hapi";
-import { JolocomSDK, IJolocomSDKConfig } from '@jolocom/sdk'
+import { Agent } from '@jolocom/sdk'
 import { JolocomWebServiceBase, JolocomWebServiceOptions } from '@jolocom/web-service-base'
 import * as Boom from '@hapi/boom'
 
@@ -14,8 +14,8 @@ export class HapiJolocomWebService extends JolocomWebServiceBase {
 
   extraRouteConfig?: object
 
-  constructor(sdk: JolocomSDK, options: JolocomWebServiceOptions & { extraRouteConfig?: object }) {
-    super(sdk, options)
+  constructor(agent: Agent, options: JolocomWebServiceOptions & { extraRouteConfig?: object }) {
+    super(agent, options)
     this.extraRouteConfig = options.extraRouteConfig
   }
 
@@ -67,7 +67,7 @@ export class HapiJolocomWebService extends JolocomWebServiceBase {
         let { initially, ws, ctx } = request.websocket()
         if (!ctx.chan) {
           try {
-            ctx.chan = await this.sdk.channels.findByJWT(request.payload)
+            ctx.chan = await this.agent.channels.findByJWT(request.payload)
             ctx.chan.transportAPI = {
               send: ws.send.bind(ws)
             }
