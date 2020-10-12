@@ -53,31 +53,33 @@ class HapiJolocomWebService extends web_service_base_1.JolocomWebServiceBase {
             server.route({
                 path: this.paths.chan,
                 method: 'POST',
-                config: Object.assign(Object.assign({}, this.extraRouteConfig), { plugins: {
-                        websocket: {
+                config: Object.assign(Object.assign({}, this.extraRouteConfig), { payload: { parse: false }, plugins: Object.assign(Object.assign({}, (this.extraRouteConfig && this.extraRouteConfig.plugins)), { websocket: {
                             only: true,
-                        }
-                    } }),
+                        } }) }),
                 handler: (request, h) => __awaiter(this, void 0, void 0, function* () {
                     let { initially, ws, ctx } = request.websocket();
+                    const payload = request.payload && request.payload.toString();
+                    if (!payload) {
+                        console.error('channel handler got no payload', request.payload);
+                        return Boom.internal('empty payload');
+                    }
                     if (!ctx.chan) {
                         try {
-                            ctx.chan = yield this.agent.channels.findByJWT(request.payload);
+                            ctx.chan = yield this.agent.channels.findByJWT(payload);
                             ctx.chan.transportAPI = {
                                 send: ws.send.bind(ws)
                             };
                         }
                         catch (err) {
-                            console.error('while creating websockets channel', err);
-                            console.log(request.payload);
+                            console.error('while creating websockets channel', payload, err);
                             return Boom.internal(err.toString());
                         }
                     }
                     try {
-                        ctx.chan.processJWT(request.payload);
+                        ctx.chan.processJWT(payload);
                     }
                     catch (err) {
-                        console.error('while processing SSI message:', request.payload, 'error:', err);
+                        console.error('while processing SSI message:', payload, 'error:', err);
                         return Boom.internal(err.toString());
                     }
                     // TODO return nothing without breaking hapi websockets??

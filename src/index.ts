@@ -51,7 +51,10 @@ export class HapiJolocomWebService extends JolocomWebServiceBase {
       method: 'POST',
       config: {
         ...this.extraRouteConfig,
+        payload: { parse: false },
         plugins: {
+          // @ts-ignore
+          ...(this.extraRouteConfig && this.extraRouteConfig.plugins),
           websocket: {
             only: true,
               /*disconnect: ({ ctx }) => {
@@ -65,23 +68,28 @@ export class HapiJolocomWebService extends JolocomWebServiceBase {
         h: ResponseToolkit
       ) => {
         let { initially, ws, ctx } = request.websocket()
+        const payload = request.payload && request.payload.toString()
+        if (!payload) {
+          console.error('channel handler got no payload', request.payload)
+          return Boom.internal('empty payload')
+        }
+
         if (!ctx.chan) {
           try {
-            ctx.chan = await this.agent.channels.findByJWT(request.payload)
+            ctx.chan = await this.agent.channels.findByJWT(payload)
             ctx.chan.transportAPI = {
               send: ws.send.bind(ws)
             }
           } catch (err) {
-            console.error('while creating websockets channel', err)
-            console.log(request.payload)
+            console.error('while creating websockets channel', payload, err)
             return Boom.internal(err.toString())
           }
         }
 
         try {
-          ctx.chan.processJWT(request.payload)
+          ctx.chan.processJWT(payload)
         } catch (err) {
-          console.error('while processing SSI message:', request.payload, 'error:', err)
+          console.error('while processing SSI message:', payload, 'error:', err)
           return Boom.internal(err.toString())
         }
 
