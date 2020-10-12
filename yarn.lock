@@ -797,18 +797,18 @@
   resolved "https://registry.yarnpkg.com/@jolocom/sdk-password-store-filesystem/-/sdk-password-store-filesystem-0.1.0.tgz#4b9053ef57aa63db1a548a060a7f93a7a2b2b79c"
   integrity sha512-j8sKmOUKQvUQMqFzMm9Yv5oqiJuikm7GaHU4gMa2mVPQcpoX7oGP7Sfgt2PkYK+Z8myRtqU5qb8Y6OKOJBvFug==
 
-"@jolocom/sdk-storage-typeorm@^2.0.0":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@jolocom/sdk-storage-typeorm/-/sdk-storage-typeorm-2.0.2.tgz#b4f73dde51478d117b712f861d25c84c3de15942"
-  integrity sha512-1g1tB70lE8b/Dj6tZyFKeQ8IGRkxL+AZr0dpzGhKETvT3F6wX57ECGTzIzQtGqFtXkgfOvThzX91d5SOlk7hxg==
+"@jolocom/sdk-storage-typeorm@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@jolocom/sdk-storage-typeorm/-/sdk-storage-typeorm-3.0.0.tgz#11afacea2f24659107df39a8052780f84f5c4c76"
+  integrity sha512-Re0uQX2aYteZs2vl0RobUiwo3Dbs4qtzGsaiFl7sFmlPtxj3FeGeDOqxXq6EU3CCIcnIM7QWGE/8qfdlG0+mKA==
   dependencies:
-    class-transformer "^0.2.3"
+    class-transformer "^0.3.1"
     ramda "^0.27.1"
 
-"@jolocom/sdk@^1.0.0-rc11":
-  version "1.0.0-rc11"
-  resolved "https://registry.yarnpkg.com/@jolocom/sdk/-/sdk-1.0.0-rc11.tgz#060d6b37f05ca786eb6490a16a74b25f910b9339"
-  integrity sha512-TjeoEjvjDFa2FNgbBE5+dD5IXtf7SWGY1vJ+XGoZbHQ5qELJsbUCbJcSaZPyCK32svLcmxQi4aC35zeAnEx4BQ==
+"@jolocom/sdk@^1.0.0-rc12":
+  version "1.0.0-rc12"
+  resolved "https://registry.yarnpkg.com/@jolocom/sdk/-/sdk-1.0.0-rc12.tgz#910df7431f37e76e8dd6439e4d6399a119620751"
+  integrity sha512-cpvXQlipwh6/TuadROeoi1s3b6JV9V0IxZ4xUZ3M91g23IekLkv1bGhMPoW0ESX0vLTNNAa4Q1K/OAOzZN2G0g==
   dependencies:
     "@jolocom/protocol-ts" "^0.5.2"
     form-data "^3.0.0"
@@ -821,10 +821,10 @@
   dependencies:
     rfc4648 "^1.4.0"
 
-"@jolocom/web-service-base@^3.0.0-rc1":
-  version "3.0.0-rc1"
-  resolved "https://registry.yarnpkg.com/@jolocom/web-service-base/-/web-service-base-3.0.0-rc1.tgz#67861a7e4765d776b28d067aae598ae421dfbece"
-  integrity sha512-AljSx77YXJ1FZIsWfVZNkAS2kRKGFQ9w//CHLEvzbAZJHYRC2udKQClulHfG3Heiu83ViHwTcOSUR37t4R657Q==
+"@jolocom/web-service-base@^3.0.0-rc2":
+  version "3.0.0-rc2"
+  resolved "https://registry.yarnpkg.com/@jolocom/web-service-base/-/web-service-base-3.0.0-rc2.tgz#d67f7204f9ff464746bf258c947890a7daf39bcb"
+  integrity sha512-A7awrCURPevvAN7WNiTydrxmpe2Z0a1o0inRthPlWog5AelOGr7DrS0LzQi7MKWg7pqoC+tg6fH7SqtMtoYN0g==
   dependencies:
     qrcode "^1.4.4"
     uuid "^8.3.0"
@@ -1099,11 +1099,6 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   dependencies:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
-
-class-transformer@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.2.3.tgz#598c92ca71dcca73f91ccb875d74a3847ccfa32d"
-  integrity sha512-qsP+0xoavpOlJHuYsQJsN58HXSl8Jvveo+T37rEvCEeRfMWoytAyR0Ua/YsFgpM6AZYZ/og2PJwArwzJl1aXtQ==
 
 class-transformer@^0.3.1:
   version "0.3.1"
