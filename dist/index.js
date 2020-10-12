@@ -19,14 +19,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const web_service_base_1 = require("@jolocom/web-service-base");
 const Boom = __importStar(require("@hapi/boom"));
 class HapiJolocomWebService extends web_service_base_1.JolocomWebServiceBase {
-    constructor(sdk, options) {
-        super(sdk, options);
+    constructor(agent, options) {
+        super(agent, options);
         this.name = 'hapi-jolocom-web-service';
         this.multiple = true;
-        this.version = "1.0.0";
+        this.version = "2.0.0";
         // TODO: add hapi websocket to requirements
         //       but also make it disable-able??
-        this.requirements = { node: "10" };
+        this.requirements = {};
         this.extraRouteConfig = options.extraRouteConfig;
     }
     register(server) {
@@ -62,7 +62,7 @@ class HapiJolocomWebService extends web_service_base_1.JolocomWebServiceBase {
                     let { initially, ws, ctx } = request.websocket();
                     if (!ctx.chan) {
                         try {
-                            ctx.chan = yield this.sdk.channels.findByJWT(request.payload);
+                            ctx.chan = yield this.agent.channels.findByJWT(request.payload);
                             ctx.chan.transportAPI = {
                                 send: ws.send.bind(ws)
                             };

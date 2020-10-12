@@ -7,10 +7,10 @@ import * as Boom from '@hapi/boom'
 export class HapiJolocomWebService extends JolocomWebServiceBase {
   name = 'hapi-jolocom-web-service'
   multiple = true
-  version = "1.0.0"
+  version = "2.0.0"
   // TODO: add hapi websocket to requirements
   //       but also make it disable-able??
-  requirements = { node: "10" }
+  requirements = { }
 
   extraRouteConfig?: object
 
