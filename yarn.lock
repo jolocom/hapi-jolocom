@@ -778,10 +778,10 @@
   dependencies:
     cred-types-jolocom-core "^0.0.11"
 
-"@jolocom/protocol-ts@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@jolocom/protocol-ts/-/protocol-ts-0.5.2.tgz#291a6865f2c3eeb47443bf8be3210848baeb5d25"
-  integrity sha512-vQq5EhapRaxyzM3UaEAycoej1jdaU6RWM1yNeh47SqHqEfRsxsVrI3MYAuUeCXaq5ULv4MCwrDt/Y6ARsR4EOA==
+"@jolocom/protocol-ts@^0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@jolocom/protocol-ts/-/protocol-ts-0.5.4.tgz#a59052d97b45ad157e877b1ed8ed2cd8235ad45e"
+  integrity sha512-t6gzeLZPgKQUksjAVgMint/htYIEy6LwVfqhm7kZx4+bkAxa0LHIynqEXFPA7bbx1+mrd2hxsvWmSswXiBtlkw==
   dependencies:
     cred-types-jolocom-core "^0.0.11"
 
@@ -797,20 +797,20 @@
   resolved "https://registry.yarnpkg.com/@jolocom/sdk-password-store-filesystem/-/sdk-password-store-filesystem-0.1.0.tgz#4b9053ef57aa63db1a548a060a7f93a7a2b2b79c"
   integrity sha512-j8sKmOUKQvUQMqFzMm9Yv5oqiJuikm7GaHU4gMa2mVPQcpoX7oGP7Sfgt2PkYK+Z8myRtqU5qb8Y6OKOJBvFug==
 
-"@jolocom/sdk-storage-typeorm@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@jolocom/sdk-storage-typeorm/-/sdk-storage-typeorm-3.0.0.tgz#11afacea2f24659107df39a8052780f84f5c4c76"
-  integrity sha512-Re0uQX2aYteZs2vl0RobUiwo3Dbs4qtzGsaiFl7sFmlPtxj3FeGeDOqxXq6EU3CCIcnIM7QWGE/8qfdlG0+mKA==
+"@jolocom/sdk-storage-typeorm@^4.3.0-rc0":
+  version "4.3.0-rc0"
+  resolved "https://registry.yarnpkg.com/@jolocom/sdk-storage-typeorm/-/sdk-storage-typeorm-4.3.0-rc0.tgz#5a0f686621adb8753e25c944362c9ce3df2e3d9e"
+  integrity sha512-UfJkSVH59Izi13VEczLTkuSj6nXV6kKvxDSpp3GacL6GJ6NPU5X4Jl1H9J50cIyiohZjUwVmdabX8sohzOiJJQ==
   dependencies:
     class-transformer "^0.3.1"
     ramda "^0.27.1"
 
-"@jolocom/sdk@^1.0.0-rc16":
-  version "1.0.0-rc16"
-  resolved "https://registry.yarnpkg.com/@jolocom/sdk/-/sdk-1.0.0-rc16.tgz#67db9de9a450ddcb7feaec88824671c18ae62ef2"
-  integrity sha512-7sT5ouqEalo/S7dCOK+KuEhV9+YTKMJd7qFtjU+lS2YHGc7M1k3qXllfR2SMBJMu7j1MkopZvAFi812aZE3rkQ==
+"@jolocom/sdk@^1.3.0-rc4":
+  version "1.3.0-rc4"
+  resolved "https://registry.yarnpkg.com/@jolocom/sdk/-/sdk-1.3.0-rc4.tgz#ef084d3de6952a62438df1ade68f717445becd71"
+  integrity sha512-F5tfs7e79TBiJPDW9fSVjy63gUsrXWxaoC7shduO4vkn179y2/8jQ8j7cjmMhE7FIsX7hUDOPby80nAuz8BH2A==
   dependencies:
-    "@jolocom/protocol-ts" "^0.5.2"
+    "@jolocom/protocol-ts" "^0.5.4"
     form-data "^3.0.0"
     ramda "^0.26.1"
 
@@ -2049,6 +2049,11 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
+
+typed-emitter@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/typed-emitter/-/typed-emitter-1.3.1.tgz#c98d71551a99d5f08ba9085ee44b8fc9b2357502"
+  integrity sha512-2h7utWyXgd2R2u2IuL8B4yu1gqMxbgUj2VS/MGVbFhEVQNJKXoQQoS5CBMh+eW31zFeSmDfEQ3qQf4xy5SlPVQ==
 
 typescript@3.6.3:
   version "3.6.3"
