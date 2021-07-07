@@ -97,7 +97,8 @@ class HapiJolocomWebService extends web_service_base_1.JolocomWebServiceBase {
                 config: Object.assign(Object.assign({}, this.extraRouteConfig), { payload: { output: "data", parse: true, allow: "application/json" }, plugins: { websocket: true } }),
                 handler: (request, h) => __awaiter(this, void 0, void 0, function* () {
                     try {
-                        return this.processRPC(request.payload);
+                        let websocket = request.websocket();
+                        return this.processRPC(request.payload, websocket.ws);
                     }
                     catch (err) {
                         console.error('while processing RPC message:', request.payload, 'error:', err);
