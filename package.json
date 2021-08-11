@@ -31,7 +31,7 @@
     "typescript": "3.6.3"
   },
   "dependencies": {
-    "@jolocom/web-service-base": "^3.0.0-rc3",
+    "@jolocom/web-service-base": "^3.0.0-rc4",
     "ws": "^7.3.0"
   },
   "peerDependencies": {

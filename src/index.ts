@@ -118,7 +118,8 @@ export class HapiJolocomWebService extends JolocomWebServiceBase {
         h: ResponseToolkit
       ) => {
         try {
-          return this.processRPC(request.payload)
+          let websocket = request.websocket()
+          return this.processRPC(request.payload, websocket.ws);
         } catch (err) {
           console.error('while processing RPC message:', request.payload, 'error:', err)
           return Boom.badRequest(err.toString())
